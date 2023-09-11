@@ -18,7 +18,7 @@ export default function ContactSection() {
       </h2>
       <p className=" 2xl:text-3xl text-2xl lg:mt-12 text-neutral-300 text-neutral-300 2xl:px-64">
         Interested in working together or have a question? Feel free to reach
-        out. I'm here to help you turn your ideas into amazing digital
+        out. I`m here to help you turn your ideas into amazing digital
         realities. Looking forward to hearing from you soon!
       </p>
       <div className="flex flex-row flex-wrap justify-center gap-4">

@@ -69,7 +69,7 @@ export default function ProjectSection() {
         Projects
       </h2>
       <p className="2xl:text-2xl text-xl lg:my-12 md:w-2/3 text-neutral-300">
-        Here's a glimpse of some of my recent and exciting projects. Each of
+        Here`s a glimpse of some of my recent and exciting projects. Each of
         them reflects my focus on create impactful solutions for others people.
       </p>
       {displayedProjects.map((project) => (
