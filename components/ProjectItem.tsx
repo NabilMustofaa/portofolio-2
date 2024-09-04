@@ -28,6 +28,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
           <p className=" text-xl 2xl:text-2xl text-neutral-300">
             {description}
           </p>
+          <p className=" font-bold text-xl 2xl:text-2xl">Tech Stack :</p>
+          <ul className=" text-xl 2xl:text-2xl text-neutral-300 list-disc px-6">
+            <li>React</li>
+            <li>Next</li>
+            <li>Tailwind</li>
+          </ul>
         </div>
       </div>
       <div className="flex-col text-white md:w-7/12">

@@ -3,7 +3,7 @@ import HeroPhoto from "@/components/HeroPhoto";
 
 export default function HeroSection() {
   return (
-    <div className="2xl:px-80 lg:px-60 text-white text-center flex flex-col h-screen 2xl:py-20 py-8">
+    <div className="2xl:px-40 lg:px-30 text-white text-center flex flex-col h-screen 2xl:py-8 py-4 relative">
       <HeroPhoto />
       <h1 className=" font-bold  2xl:text-[7rem] text-7xl 2xl:mt-24 mt-4">
         Hi, I`m Nabil Mustofa
