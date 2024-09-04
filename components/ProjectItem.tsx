@@ -8,6 +8,7 @@ interface ProjectItemProps {
   role: string;
   description: string;
   image: string;
+  stack: string[];
 }
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -16,6 +17,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   role,
   description,
   image,
+  stack,
 }) => {
   return (
     <div className="flex md:flex-row flex-col-reverse p-12 bg-neutral-900 gap-10 rounded-2xl my-4">
@@ -30,9 +32,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
           </p>
           <p className=" font-bold text-xl 2xl:text-2xl">Tech Stack :</p>
           <ul className=" text-xl 2xl:text-2xl text-neutral-300 list-disc px-6">
-            <li>React</li>
-            <li>Next</li>
-            <li>Tailwind</li>
+            {stack.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
       </div>

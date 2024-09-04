@@ -10,6 +10,7 @@ interface Project {
   role: string;
   description: string;
   image: string;
+  stack: string[];
 }
 
 const works: Project[] = [
@@ -21,6 +22,7 @@ const works: Project[] = [
     description:
       "Easy Stock Opname is a robust and user-friendly inventory management system designed to streamline stock-taking processes in PT Borwita Citra Prima. With this powerful tool, the company can effortlessly keep track of inventory, update stock levels, and generate detailed reports. Gain real-time insights into your inventory, reduce errors, and optimize your supply chain with this interactive application.",
     image: "/stock-opname.png",
+    stack: ["Laravel", "Bootstrap", "jQuery"],
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ const works: Project[] = [
     description:
       "Project Tracker is an internal PT Borwita Citra Prima project management tool. Track project progress, set tasks, allocate personnel, and collaborate seamlessly with your team. With an intuitive interface and features, Project Tracker empowers you to manage company projects and meet deadlines with ease.",
     image: "/project-tracker.png",
+    stack: ["Laravel", "Bootstrap", "jQuery"],
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ const works: Project[] = [
     description:
       "AMERTA UNAIR is a comprehensive application designed specifically to meet the unique needs of Universitas Airlangga's student orientation process. This innovative platform provides a holistic approach to student orientation, offering a wide range of features and tools to ensure a smooth and informative onboarding experience. It empowers incoming students with valuable information about the university, its resources, and the vibrant campus community.",
     image: "/amerta.png",
+    stack: ["Tailwind", "jQuery"],
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ const works: Project[] = [
     description:
       "Abaya Salma Supply Chain Management (SCM) software is your company's strategic partner in optimizing every facet of your supply chain operations. With Abaya Salma SCM, you gain unparalleled visibility into your entire supply chain, from procurement to distribution. This robust and sophisticated solution empowers you to make data-driven decisions, enhance operational efficiency, and reduce costs. It facilitates seamless collaboration with suppliers, streamlines inventory management, and minimizes lead times.",
     image: "/abaya-salma.png",
+    stack: ["Laravel", "Tailwind", "jQuery"],
   },
 ];
 
