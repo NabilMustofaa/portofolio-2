@@ -15,6 +15,26 @@ interface Project {
 
 const works: Project[] = [
   {
+    id: 6,
+    title: "Scoutition AI",
+    year: "2024",
+    role: "Fullstack Website Developer",
+    description:
+      "Scoutition AI is a website that can offer recommendations for determining the best playing position along with suitable training modules for football players. This website aims to enhance the quality of players performance in their optimal positions, with feature like position recommendation and training articles.",
+    image: "/scoutition.png",
+    stack: ["React", "Next.js", "Tailwind", "Flask"],
+  },
+  {
+    id: 7,
+    title: "Financing Analyst System",
+    year: "2024",
+    role: "Software Engineer",
+    description:
+      "Financing Analyst System are Credit Assessment Application with Machine Learning method to determine the customer's grade before being given a credit loan with range A - C. The application aim to assist financial institutions to make better decisions on credit. The application also had features for determining customer grading, storing customer data, and printing customer reports.",
+    image: "/fas.png",
+    stack: ["Laravel", "Tailwind", "jQuery", "Flask"],
+  },
+  {
     id: 1,
     title: "Easy Stock Opname",
     year: "2023",
