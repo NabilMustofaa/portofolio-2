@@ -13,7 +13,7 @@ export default function Home() {
     <div className="w-screen flex flex-col align-middle">
       <BlurBg />
       <Navigation />
-      <section className="2xl:px-60 md:px-40 px-8">
+      <section className="2xl:px-60 md:px-40 px-4 py-0">
         <HeroSection />
         <ProjectSection />
         <AboutSection />

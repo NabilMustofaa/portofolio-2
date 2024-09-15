@@ -10,7 +10,7 @@ export default function HeroPhoto() {
         alt=""
         width={60}
         height={60}
-        className="w-14 h-14 my-auto mx-8 2xl:w-20 2xl:h-20 "
+        className="w-12 h-12 my-auto mx-8 2xl:w-16 2xl:h-16 "
       />
       <div className=" flex flex-col justify-center align-middle">
         <Image
@@ -18,14 +18,14 @@ export default function HeroPhoto() {
           alt=""
           width={60}
           height={60}
-          className=" w-12 h-12 mx-auto my-12 2xl:w-16 2xl:h-16"
+          className=" w-10 h-10 mx-auto my-12 2xl:w-14 2xl:h-14"
         />
         <Image
           src="/Ellipse 3.png"
           alt=""
           width={500}
           height={500}
-          className="w-56 2xl:w-[20rem] 2xl:h-[20rem] "
+          className="w-40 2xl:w-[16rem] 2xl:h-[16rem] "
         />
       </div>
       <Image
@@ -33,7 +33,7 @@ export default function HeroPhoto() {
         alt=""
         width={60}
         height={60}
-        className="w-12 h-12 my-auto mx-8 2xl:w-14 2xl:h-14 "
+        className="w-8 h-8 my-auto mx-8 2xl:w-12 2xl:h-12 "
       />
     </div>
   );

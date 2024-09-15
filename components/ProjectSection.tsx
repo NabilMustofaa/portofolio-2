@@ -112,7 +112,7 @@ export default function ProjectSection() {
 
   return (
     <div className="text-white flex flex-col" id="project">
-      <h2 className="font-bold 2xl:text-6xl text-5xl 2xl:mt-24 xl:mt-8">
+      <h2 className="font-bold 2xl:text-6xl md:text-5xl text-3xl 2xl:mt-24 xl:mt-8">
         Projects
       </h2>
       <p className="2xl:text-2xl text-xl lg:my-12 md:w-2/3 text-neutral-300">

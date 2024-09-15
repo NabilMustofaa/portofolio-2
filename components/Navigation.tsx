@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Navigation() {
   return (
-    <div>
-      <nav className="flex flex-row leading-6 text-xl justify-center gap-12 py-6 text-neutral-400 z-10">
+    <div className="">
+      <nav className="flex flex-row leading-6 text-xl justify-center md:gap-12 gap-4 py-6 text-neutral-400 z-10">
         <a href="" className="hover:text-neutral-50">
           Home
         </a>

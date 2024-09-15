@@ -13,17 +13,17 @@ export default function ContactSection() {
         height={1000}
         className=" md:w-80 w-20 absolute  md:-top-1/4 md:-left-32 -top-10 -left-10 overflow-hidden"
       ></Image>
-      <h2 className=" font-bold 2xl:text-6xl text-5xl 2xl:mt-24 xl:mt-8">
+      <h2 className=" font-bold 2xl:text-6xl md:text-5xl text-3xl 2xl:mt-24 xl:mt-8">
         Lets Talks!
       </h2>
-      <p className=" 2xl:text-3xl text-2xl lg:mt-12 text-neutral-300 text-neutral-300 2xl:px-64">
+      <p className=" 2xl:text-3xl md:text-2xl lg:mt-12 text-neutral-300 text-neutral-300 2xl:px-64">
         Interested in working together or have a question? Feel free to reach
         out. I`m here to help you turn your ideas into amazing digital
         realities. Looking forward to hearing from you soon!
       </p>
       <div className="flex flex-row flex-wrap justify-center gap-4">
         <a
-          className=" border border-neutral-100 rounded-lg py-3 px-4 w-fit justify-self-end text-xl 2xl:text-2xl flex justify-between gap-3 align-middle"
+          className=" border border-neutral-100 rounded-lg py-3 px-4 w-fit justify-self-end md:text-xl 2xl:text-2xl flex justify-between gap-3 align-middle"
           href="mailto:nabilmustofa6@gmail.com"
         >
           <Image
