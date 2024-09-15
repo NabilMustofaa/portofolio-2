@@ -11,9 +11,31 @@ interface Project {
   description: string;
   image: string;
   stack: string[];
+  link?: Link[];
+}
+
+interface Link {
+  type: string;
+  url: string;
 }
 
 const works: Project[] = [
+  {
+    id: 8,
+    title: "Stock Opname Mobile App",
+    year: "2024",
+    role: "Mobile App Developer | React Native Developer",
+    description:
+      "Mobile Stock Opname Application are mobile application inspired by Easy Stock Opname from PT BORWITA CITRA PRIMA. Right now application are just replica without any addition feature from PWA Easy Stock Opname. Public feature are still under development and will be available soon on playstore.",
+    image: "/stock-opname-mobile.png",
+    stack: ["React Native", "Expo", "Nativewind"],
+    link: [
+      {
+        type: "drive",
+        url: "https://drive.google.com/file/d/1tItNDfe2RQRWaJECBji3PhAq4AVgWrfG/view?usp=sharing",
+      },
+    ],
+  },
   {
     id: 6,
     title: "Scoutition AI",

@@ -9,6 +9,12 @@ interface ProjectItemProps {
   description: string;
   image: string;
   stack: string[];
+  link?: Link[];
+}
+
+interface Link {
+  type: string;
+  url: string;
 }
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -18,6 +24,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   description,
   image,
   stack,
+  link,
 }) => {
   return (
     <div className="flex md:flex-row flex-col-reverse p-12 bg-neutral-900 gap-10 rounded-2xl my-4">
@@ -36,6 +43,23 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
               <li key={item}>{item}</li>
             ))}
           </ul>
+          {link && (
+            <div>
+              <button className="2xl:text-2xl text-xl underline text-center border border-neutral-100 rounded-lg py-3 px-4 flex flex-row items-center hover:bg-neutral-800">
+                <Image
+                  src={link[0].type + ".svg"}
+                  alt={link[0].type}
+                  width={20}
+                  height={20}
+                  color="white"
+                />
+                <div className="w-px h-6 bg-neutral-100 mx-2"></div>
+                <a href={link[0].url} className="">
+                  Download
+                </a>
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <div className="flex-col text-white md:w-7/12">
