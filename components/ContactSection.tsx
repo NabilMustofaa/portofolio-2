@@ -23,6 +23,20 @@ export default function ContactSection() {
       </p>
       <div className="flex flex-row flex-wrap justify-center gap-4">
         <a
+          href="/Muhammad Nabil Mustofa-resume.pdf"
+          className=" border border-neutral-100 rounded-lg py-3 px-4 w-fit justify-self-end text-xl 2xl:text-2xl flex justify-between gap-3 align-middle"
+          download
+        >
+          <Image
+            src={"/docs.svg"}
+            width={24}
+            height={24}
+            alt=""
+            className="my-auto"
+          />
+          <span>Check My Resume</span>
+        </a>
+        <a
           className=" border border-neutral-100 rounded-lg py-3 px-4 w-fit justify-self-end md:text-xl 2xl:text-2xl flex justify-between gap-3 align-middle"
           href="mailto:nabilmustofa6@gmail.com"
         >
@@ -33,7 +47,6 @@ export default function ContactSection() {
             alt=""
             className="my-auto"
           />
-          <span>nabilmustofa6@gmail.com</span>
         </a>
         <a
           href="https://www.linkedin.com/in/nabilmustofa/"
