@@ -8,7 +8,7 @@ export default function ContactSection() {
     >
       <Image
         src="/ellipse left.png"
-        alt=""
+        alt="Ellipse"
         width={1000}
         height={1000}
         className=" md:w-80 w-20 absolute  md:-top-1/4 md:-left-32 -top-10 -left-10 overflow-hidden"
@@ -31,7 +31,7 @@ export default function ContactSection() {
             src={"/docs.svg"}
             width={24}
             height={24}
-            alt=""
+            alt="Resume"
             className="my-auto"
           />
           <span>Check My Resume</span>
@@ -44,7 +44,7 @@ export default function ContactSection() {
             src={"/email.png"}
             width={24}
             height={24}
-            alt=""
+            alt="Email"
             className="my-auto"
           />
         </a>
@@ -56,7 +56,7 @@ export default function ContactSection() {
             src={"/linkedin.png"}
             width={24}
             height={24}
-            alt=""
+            alt="LinkedIn"
             className="my-auto"
           />
         </a>
@@ -68,7 +68,7 @@ export default function ContactSection() {
             src={"/github.png"}
             width={24}
             height={24}
-            alt=""
+            alt="GitHub"
             className="my-auto"
           />
         </a>
@@ -80,14 +80,14 @@ export default function ContactSection() {
             src={"/whatsapp.png"}
             width={24}
             height={24}
-            alt=""
+            alt="WhatsApp"
             className="my-auto"
           />
         </a>
       </div>
       <Image
         src="/ellipse right.png"
-        alt=""
+        alt="Ellipse"
         width={1000}
         height={1000}
         className="md:w-80 w-20 absolute  md:-bottom-1/4 md:-right-32 -bottom-10 -right-10 bg-clip-border overflow-hidden"

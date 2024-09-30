@@ -18,7 +18,7 @@ export default function AboutSection() {
         </p>
         <Image
           src="/avatar.png"
-          alt=""
+          alt="Nabil Mustofa profile picture"
           width={1000}
           height={1000}
           className=" w-80 2xl:w-96 mx-auto my-5"

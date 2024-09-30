@@ -23,9 +23,8 @@ export default function BlurBg() {
             width="1985.77"
             height="2309.96"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -45,8 +44,8 @@ export default function BlurBg() {
             y2="837.452"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#D9D9D9" stop-opacity="0.26" />
-            <stop offset="1" stop-color="#D9D9D9" stop-opacity="0.01" />
+            <stop />
+            <stop offset="1" />
           </linearGradient>
         </defs>
       </svg>
