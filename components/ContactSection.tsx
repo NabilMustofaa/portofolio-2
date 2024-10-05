@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ContactSection() {
   return (
     <div
-      className="flex flex-col  md:py-8 py-20 bg-neutral-900 gap-10 rounded-2xl md:my-8 text-white text-center justify-between items-center my-20 relative overflow-hidden md:px-40 px-12"
+      className="flex flex-col  md:py-8 py-20 bg-neutral-900 bg-opacity-80 gap-10 rounded-2xl md:my-8 text-white text-center justify-between items-center my-20 relative overflow-hidden md:px-40 px-12"
       id="contact"
     >
       <Image

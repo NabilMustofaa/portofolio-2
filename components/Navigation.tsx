@@ -3,7 +3,7 @@ import React from "react";
 export default function Navigation() {
   return (
     <div className="">
-      <nav className="flex flex-row leading-6 text-xl justify-center md:gap-12 gap-4 py-6 text-neutral-400 z-10">
+      <nav className="flex flex-row leading-6 text-xl justify-center md:gap-12 gap-4 py-6 text-neutral-400 z-10 items-center">
         <a href="" className="hover:text-neutral-50">
           Home
         </a>
@@ -13,7 +13,7 @@ export default function Navigation() {
         <a href="#about" className="hover:text-neutral-50">
           About
         </a>
-        <a href="#contact" className="text-gradient">
+        <a href="#contact" className="text-gradient border-gradient">
           Contact
         </a>
       </nav>

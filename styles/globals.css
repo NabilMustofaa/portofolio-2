@@ -6,30 +6,84 @@
   html {
     overflow-x: hidden;
   }
+
   .text-gradient {
-    --bg-size: 100%;
+    --bg-size: 200%; /* Increase the background size to allow for movement */
     --color-one: hsla(191, 100%, 68%);
     --color-two: hsla(263, 100%, 68%);
     font-size: clamp(1.25rem, 1.25rem, 1.25rem);
+
+    /* Background gradient for text */
+    background-image: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    );
+    background-size: var(--bg-size) 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: move-bg 8s linear infinite;
+  }
+
+  .border-gradient {
+    --border-width: 3px;
+    --border-bg-size: 300%;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Membuat border menjadi pill */
+  }
+
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: var(--border-width) solid transparent;
+    border-radius: 9999px; /* Membuat border menjadi pill */
     background: linear-gradient(
         90deg,
         var(--color-one),
         var(--color-two),
         var(--color-one)
       )
-      0 0 / var(--bg-size) 100%;
-    color: transparent;
-    background-clip: text;
+      border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    background-size: var(--border-bg-size) 100%;
+    animation: move-border 8s linear infinite;
+  }
+
+  @keyframes move-bg {
+    0% {
+      background-position: 0% 0;
+    }
+    100% {
+      background-position: var(--bg-size) 0;
+    }
+  }
+
+  @keyframes move-border {
+    0% {
+      background-position: 0% 0;
+    }
+    100% {
+      background-position: var(--border-bg-size) 0;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .boujee-text {
+    .text-gradient {
       animation: move-bg 8s linear infinite;
     }
-    @keyframes move-bg {
-      to {
-        background-position: var(--bg-size) 0;
-      }
+    .border-gradient::before {
+      animation: move-border 8s linear infinite;
     }
   }
 }
