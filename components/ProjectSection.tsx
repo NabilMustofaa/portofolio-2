@@ -29,12 +29,6 @@ const works: Project[] = [
       "Mobile Stock Opname Application are mobile application inspired by Easy Stock Opname from PT BORWITA CITRA PRIMA. Right now application are just replica without any addition feature from PWA Easy Stock Opname. Public feature are still under development and will be available soon on playstore.",
     image: "/stock-opname-mobile.png",
     stack: ["React Native", "Expo", "Nativewind"],
-    link: [
-      {
-        type: "drive",
-        url: "https://drive.google.com/file/d/1tItNDfe2RQRWaJECBji3PhAq4AVgWrfG/view?usp=sharing",
-      },
-    ],
   },
   {
     id: 6,
