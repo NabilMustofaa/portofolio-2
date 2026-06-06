@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Outfit } from "next/font/google";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
@@ -42,11 +41,6 @@ export const metadata: Metadata = {
   },
 };
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
 export default function RootLayout({
   children,
 }: {
@@ -54,9 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${outfit.variable} font-sans bg-neutral-950`}>
-        {children}
-      </body>
+      <body className="font-sans bg-neutral-950">{children}</body>
     </html>
   );
 }

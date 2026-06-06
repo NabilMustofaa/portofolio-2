@@ -1,18 +1,35 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 export default function ContactSection() {
   return (
     <div
       className="flex flex-col  md:py-8 py-20 bg-neutral-900 bg-opacity-80 gap-10 rounded-2xl md:my-8 text-white text-center justify-between items-center my-20 relative overflow-hidden md:px-40 px-12"
       id="contact"
     >
-      <Image
-        src="/ellipse left.png"
-        alt="Ellipse"
-        width={1000}
-        height={1000}
-        className=" md:w-80 w-20 absolute  md:-top-1/4 md:-left-32 -top-10 -left-10 overflow-hidden"
-      ></Image>
+      <motion.svg
+        viewBox="0 0 100 100"
+        className="absolute -top-12 -left-12 md:-top-1/4 md:-left-24 w-44 h-44 md:w-80 md:h-80 opacity-30 blur-[2px] pointer-events-none select-none"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      >
+        <defs>
+          <linearGradient id="ring-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#22d3ee" />
+            <stop offset="50%" stopColor="#6366f1" />
+            <stop offset="100%" stopColor="#ec4899" />
+          </linearGradient>
+        </defs>
+        <circle
+          cx="50"
+          cy="50"
+          r="42"
+          stroke="url(#ring-grad-1)"
+          strokeWidth="4"
+          fill="none"
+        />
+      </motion.svg>
       <h2 className=" font-bold 2xl:text-6xl md:text-5xl text-3xl 2xl:mt-24 xl:mt-8">
         Lets Talks!
       </h2>
@@ -72,26 +89,29 @@ export default function ContactSection() {
             className="my-auto"
           />
         </a>
-        <a
-          href="https://wa.me/6285748969806"
-          className=" border border-neutral-100 rounded-lg py-3 px-4 w-fit justify-self-end text-xl 2xl:text-2xl flex justify-between gap-3 align-middle"
-        >
-          <Image
-            src={"/whatsapp.png"}
-            width={24}
-            height={24}
-            alt="WhatsApp"
-            className="my-auto"
-          />
-        </a>
       </div>
-      <Image
-        src="/ellipse right.png"
-        alt="Ellipse"
-        width={1000}
-        height={1000}
-        className="md:w-80 w-20 absolute  md:-bottom-1/4 md:-right-32 -bottom-10 -right-10 bg-clip-border overflow-hidden"
-      ></Image>
+      <motion.svg
+        viewBox="0 0 100 100"
+        className="absolute -bottom-12 -right-12 md:-bottom-1/4 md:-right-24 w-44 h-44 md:w-80 md:h-80 opacity-30 blur-[2px] pointer-events-none select-none"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      >
+        <defs>
+          <linearGradient id="ring-grad-2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#a855f7" />
+            <stop offset="50%" stopColor="#6366f1" />
+            <stop offset="100%" stopColor="#f43f5e" />
+          </linearGradient>
+        </defs>
+        <circle
+          cx="50"
+          cy="50"
+          r="42"
+          stroke="url(#ring-grad-2)"
+          strokeWidth="4"
+          fill="none"
+        />
+      </motion.svg>
     </div>
   );
 }
