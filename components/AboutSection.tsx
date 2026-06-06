@@ -1,58 +1,216 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
+  const skillsCategories = [
+    {
+      title: "Frontend Development",
+      skills: [
+        "React JS",
+        "Next JS",
+        "Tailwind CSS",
+        "JavaScript (ES6+)",
+        "JQuery",
+        "HTML5 & CSS3",
+      ],
+    },
+    {
+      title: "Backend & Databases",
+      skills: [
+        "Laravel",
+        "Node JS",
+        "Express JS",
+        "Flask (Python)",
+        "MySQL",
+        "SQLite",
+        "PostgreSQL",
+      ],
+    },
+    {
+      title: "Cloud & Tooling",
+      skills: [
+        "GCP (Google Cloud)",
+        "Git & GitHub",
+        "RESTful APIs",
+        "Vercel / VPS",
+        "Expo",
+        "Docker",
+      ],
+    },
+  ];
+
+  const experiences = [
+    {
+      role: "Supporting and Development Digital Application",
+      company: "PT Perkebunan Nusantara XII",
+      period: "Nov 2023 - May 2024",
+      description:
+        "Maintained and enhanced enterprise applications (SUPERMAN, OSS Planters, SINOFA) by optimizing backend logic, improving database queries, and implementing caching strategies to increase system performance and reliability.",
+    },
+    {
+      role: "Website Developer Intern",
+      company: "PT. Borwita Citra Prima",
+      period: "Aug 2023 - Jan 2024",
+      description:
+        "Designed and implemented high-volume internal tools (Easy Stock Opname, Project Tracker) using Laravel, jQuery, and React Native. Streamlined warehouse inventory checks and increased tracking efficiency by 35%.",
+    },
+    {
+      role: "Cloud Computing Cohort",
+      company: "Bangkit Academy 2023",
+      period: "Feb 2023 - July 2023",
+      description:
+        "Selected as one of the Google-led cloud cohort students. Achieved competencies in API design, cloud architecture on Google Cloud Platform (GCP), backend service deployment, and DevOps practices.",
+    },
+    {
+      role: "Website Developer",
+      company: "FST Airlangga University & Organizations",
+      period: "2022 - 2023",
+      description:
+        "Collaborated with academic developers to construct custom university-associated web platforms, student portals, and event landing pages using modern stack implementations.",
+    },
+    {
+      role: "Fullstack Website Developer",
+      company: "Abaya Salma",
+      period: "2023",
+      description:
+        "Designed and deployed the custom inventory database and purchase order synchronization logic for their supply chain management tool.",
+    },
+  ];
+
   return (
-    <div className="   text-white flex flex-col min-h-screen py-8" id="about">
-      <h2 className=" font-bold 2xl:text-6xl md:text-5xl text-3xl 2xl:mt-24 xl:mt-8">
-        About Me
-      </h2>
-      <div className=" flex md:flex-row flex-col-reverse justify-between">
-        <p className=" 2xl:text-4xl md:text-2xl lg:mt-12 md:w-2/3 md:text-left text-center text-neutral-300">
-          Enthusiastic and Driven Undergraduate Information Systems Student at
-          Universitas Airlangga, fueled by an unquenchable passion for the
-          dynamic world of web development. I possess an insatiable thirst for
-          knowledge, an unwavering commitment to self-improvement, and an
-          unbreakable resolve to push the boundaries of what I can achieve in
-          this ever-evolving field.
-        </p>
-        <Image
-          src="/avatar.png"
-          alt="Nabil Mustofa profile picture"
-          width={1000}
-          height={1000}
-          className=" w-80 2xl:w-96 mx-auto my-5"
-        />
-      </div>
-      <div className=" flex md:flex-row flex-col justify-between">
-        <div className="">
-          <h3 className="font-bold 2xl:text-4xl md:text-3xl text-xl my-4 ">
-            Skills & Experience
-          </h3>
-          <div className="flex md:flex-row flex-col md:gap-20 gap-5">
-            <ul className=" mx-4 list-disc md:text-xl  2xl:text-2xl flex flex-col gap-5 marker:text-indigo-600">
-              <li>React JS</li>
-              <li>Tailwind CSS</li>
-              <li>Javascript</li>
-              <li>HTML & CSS</li>
-              <li>JQuery</li>
-            </ul>
-            <ul className=" mx-4 list-disc  md:text-xl 2xl:text-2xl flex flex-col gap-5 marker:text-indigo-600">
-              <li>Laravel</li>
-              <li>Node JS</li>
-              <li>Express JS</li>
-              <li>Next JS</li>
-              <li>Flask</li>
-            </ul>
-            <ul className=" mx-4 list-decimal md:text-xl 2xl:text-2xl flex flex-col gap-5 marker:text-indigo-600">
-              <li>PT. Borwita Citra Prima (Website Developer Intern) </li>
-              <li>Bangkit Academy 2023 (Cloud Computing Cohort)</li>
-              <li>FST Airlangga University (Project Based Website)</li>
-              <li>Abaya Salma (Project Based Website)</li>
-              <li>Some Universtity Organization and Activities</li>
-            </ul>
+    <div className="text-white flex flex-col py-20 gap-16" id="about">
+      {/* Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col gap-4"
+      >
+        <h2 className="font-bold 2xl:text-7xl md:text-5xl text-3xl">
+          About Me
+        </h2>
+        <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 rounded-full"></div>
+      </motion.div>
+
+      {/* Profile and Biography */}
+      <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="lg:w-7/12 flex flex-col gap-6"
+        >
+          <p className="text-xl 2xl:text-2xl text-neutral-300 leading-relaxed font-light">
+            I am a results-driven{" "}
+            <span className="text-cyan-400 font-semibold">
+              Fullstack Engineer
+            </span>
+            . I specialize in building reliable, scalable backend
+            infrastructures and matching them with interactive, responsive user
+            interfaces.
+          </p>
+          <p className="text-xl 2xl:text-2xl text-neutral-300 leading-relaxed font-light">
+            My engineering philosophy centers on digitizing workflows, cutting
+            latencies, and producing actual, measurable business impact. With
+            hands-on experience in fullstack web, cloud systems, and hybrid
+            mobile applications, I turn complex systems into accessible
+            solutions.
+          </p>
+        </motion.div>
+
+        {/* Profile Picture */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="lg:w-4/12 flex justify-center"
+        >
+          <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl p-2">
+            <Image
+              src="/avatar.png"
+              alt="Nabil Mustofa profile picture"
+              width={400}
+              height={400}
+              className="w-full h-full object-cover rounded-xl"
+            />
           </div>
-        </div>
+        </motion.div>
+      </div>
+
+      {/* Skills and Experience Grid */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 mt-8">
+        {/* Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col gap-8"
+        >
+          <h3 className="font-bold text-2xl md:text-3xl border-b border-neutral-800 pb-3">
+            Core Toolkit
+          </h3>
+          <div className="flex flex-col gap-6">
+            {skillsCategories.map((category) => (
+              <div key={category.title} className="flex flex-col gap-3">
+                <span className="text-sm font-semibold text-neutral-400 tracking-wider uppercase">
+                  {category.title}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3.5 py-2 bg-neutral-900/60 border border-neutral-800/80 rounded-xl text-sm text-neutral-300 font-medium hover:border-cyan-500/30 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Experience Timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-col gap-8"
+        >
+          <h3 className="font-bold text-2xl md:text-3xl border-b border-neutral-800 pb-3">
+            Work
+          </h3>
+          <div className="relative border-l border-neutral-800 ml-4 flex flex-col gap-8">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative pl-8 group">
+                {/* Timeline Dot */}
+                <div className="absolute left-0 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-neutral-800 border-2 border-neutral-950 group-hover:bg-cyan-400 group-hover:border-cyan-900 transition-colors duration-300 shadow-[0_0_8px_rgba(34,211,238,0)] group-hover:shadow-[0_0_8px_#22d3ee]"></div>
+
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">
+                    {exp.period}
+                  </span>
+                  <h4 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                    {exp.role}
+                  </h4>
+                  <h5 className="text-sm font-semibold text-neutral-400">
+                    {exp.company}
+                  </h5>
+                  <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-light mt-1.5">
+                    {exp.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );

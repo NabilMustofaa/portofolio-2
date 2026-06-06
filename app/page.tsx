@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-import "../styles/globals.css";
 import Navigation from "@/components/Navigation";
 import BlurBg from "@/components/BlurBg";
 import HeroSection from "@/components/HeroSection";

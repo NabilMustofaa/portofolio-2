@@ -1,81 +1,50 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function BlurBg() {
-  const [mousePosition, setMousePosition] = useState({ x: 100, y: 100 });
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Create a spring configuration for smooth, organic movement
+  const springConfig = { damping: 35, stiffness: 120, mass: 1 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      // Clamp the mouse position within the viewable area (e.g., inside the SVG)
-      const x = Math.max(0, Math.min(event.clientX, window.innerWidth));
-      const y = Math.max(0, Math.min(event.clientY, window.innerHeight));
-      setMousePosition({ x, y });
-    };
+    // Initial centering of the bubble before mouse movement starts
+    mouseX.set(window.innerWidth / 2 - 250);
+    mouseY.set(window.innerHeight / 2 - 250);
 
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
+    const handleMouseMove = (event: MouseEvent) => {
+      // Offset the cursor coordinate by half of the bubble size (250px) to center it
+      mouseX.set(event.clientX - 250);
+      mouseY.set(event.clientY - 250);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
-    <div className="fixed inset-0 -z-10">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
-        viewBox="0 0 1440 1314"
-        fill="none"
-      >
-        <g filter="url(#filter0_f_4_280)">
-          <path
-            d="M925.243 842.5C776.243 944 433.243 982.5 302.743 890.5C172.243 798.5 252.244 655.5 321.743 553.863C391.243 452.226 1308.53 -625 1451.74 -625C1594.95 -625 1074.24 741 925.243 842.5Z"
-            fill="url(#paint0_linear_4_280)"
-          />
-        </g>
-        <defs>
-          <filter
-            id="filter0_f_4_280"
-            x="-138.18"
-            y="-996.18"
-            width="1985.77"
-            height="2309.96"
-            filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
-          >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feGaussianBlur
-              stdDeviation="185.59"
-              result="effect1_foregroundBlur_4_280"
-            />
-          </filter>
-          <linearGradient
-            id="paint0_linear_4_280"
-            x1={mousePosition.x + 120}
-            y1={mousePosition.y - 200}
-            x2={mousePosition.x + 100}
-            y2={mousePosition.y + 100 + scrollPosition}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#D9D9D9" stopOpacity="0.26" />
-            <stop offset="1" stopColor="#D9D9D9" stopOpacity="0.01" />
-          </linearGradient>
-        </defs>
-      </svg>
+    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-neutral-950">
+      {/* Dynamic Cursor-Following Glow */}
+      <motion.div
+        className="absolute w-[500px] h-[500px] rounded-full blur-[130px] opacity-25 mix-blend-screen"
+        style={{
+          x: smoothX,
+          y: smoothY,
+          background:
+            "radial-gradient(circle, rgba(34,211,238,0.5) 0%, rgba(99,102,241,0.2) 60%, rgba(0,0,0,0) 100%)",
+        }}
+      />
+
+      {/* Ambient static glows to add constant depth */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-indigo-900/10 blur-[160px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-cyan-900/10 blur-[150px]" />
     </div>
   );
 }
