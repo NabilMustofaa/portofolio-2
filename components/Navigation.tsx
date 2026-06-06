@@ -22,9 +22,11 @@ export default function Navigation() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isOpen
-          ? "md:bg-neutral-950/25 bg-neutral-950 backdrop-blur-md py-6 shadow-lg"
-          : "bg-transparent py-4"
+        isOpen
+          ? "bg-neutral-950 border-b border-neutral-900 py-6 shadow-lg"
+          : scrolled
+          ? "bg-neutral-950/85 backdrop-blur-md py-6 shadow-lg"
+          : "bg-transparent py-6"
       }`}
     >
       <nav className="max-w-7xl mx-auto flex flex-row items-center justify-between px-6 md:px-12 relative">
@@ -95,40 +97,48 @@ export default function Navigation() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ height: 0 }}
+              animate={{ height: "auto" }}
+              exit={{ height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 right-0 bg-neutral-950 backdrop-blur-lg border-b border-neutral-900/80 shadow-2xl overflow-hidden py-8 px-6 flex flex-col items-center gap-6 z-40"
+              className="md:hidden absolute top-full left-0 right-0 bg-neutral-950 border-b border-neutral-900 shadow-2xl overflow-hidden z-40"
             >
-              <Link
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className="text-neutral-300 hover:text-white text-lg font-semibold tracking-wide transition-colors duration-300"
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, delay: 0.1 }}
+                className="py-8 px-6 flex flex-col items-center gap-6"
               >
-                Home
-              </Link>
-              <Link
-                href="/#project"
-                onClick={() => setIsOpen(false)}
-                className="text-neutral-300 hover:text-white text-lg font-semibold tracking-wide transition-colors duration-300"
-              >
-                Projects
-              </Link>
-              <Link
-                href="/#about"
-                onClick={() => setIsOpen(false)}
-                className="text-neutral-300 hover:text-white text-lg font-semibold tracking-wide transition-colors duration-300"
-              >
-                About
-              </Link>
-              <Link
-                href="/#contact"
-                onClick={() => setIsOpen(false)}
-                className="text-gradient border-gradient px-6 py-2 text-lg font-semibold tracking-wide hover:scale-[1.03] transition-all"
-              >
-                Contact
-              </Link>
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
+                  className="text-neutral-300 hover:text-white text-lg font-semibold tracking-wide transition-colors duration-300"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/#project"
+                  onClick={() => setIsOpen(false)}
+                  className="text-neutral-300 hover:text-white text-lg font-semibold tracking-wide transition-colors duration-300"
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/#about"
+                  onClick={() => setIsOpen(false)}
+                  className="text-neutral-300 hover:text-white text-lg font-semibold tracking-wide transition-colors duration-300"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="text-gradient border-gradient px-6 py-2 text-lg font-semibold tracking-wide hover:scale-[1.03] transition-all"
+                >
+                  Contact
+                </Link>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
