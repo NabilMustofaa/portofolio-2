@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -40,6 +40,9 @@ export default function AboutSection() {
       ],
     },
   ];
+
+  const [showAllWork, setShowAllWork] = useState(false);
+  const maxWorkToShow = 3;
 
   const experiences = [
     {
@@ -188,27 +191,42 @@ export default function AboutSection() {
             Work
           </h3>
           <div className="relative border-l border-neutral-800 ml-4 flex flex-col gap-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-8 group">
-                {/* Timeline Dot */}
-                <div className="absolute left-0 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-neutral-800 border-2 border-neutral-950 group-hover:bg-cyan-400 group-hover:border-cyan-900 transition-colors duration-300 shadow-[0_0_8px_rgba(34,211,238,0)] group-hover:shadow-[0_0_8px_#22d3ee]"></div>
+            {experiences
+              .slice(0, showAllWork ? experiences.length : maxWorkToShow)
+              .map((exp, index) => (
+                <div key={index} className="relative pl-8 group">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-neutral-800 border-2 border-neutral-950 group-hover:bg-cyan-400 group-hover:border-cyan-900 transition-colors duration-300 shadow-[0_0_8px_rgba(34,211,238,0)] group-hover:shadow-[0_0_8px_#22d3ee]"></div>
 
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">
-                    {exp.period}
-                  </span>
-                  <h4 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                    {exp.role}
-                  </h4>
-                  <h5 className="text-sm font-semibold text-neutral-400">
-                    {exp.company}
-                  </h5>
-                  <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-light mt-1.5">
-                    {exp.description}
-                  </p>
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">
+                      {exp.period}
+                    </span>
+                    <h4 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                      {exp.role}
+                    </h4>
+                    <h5 className="text-sm font-semibold text-neutral-400">
+                      {exp.company}
+                    </h5>
+                    <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-light mt-1.5">
+                      {exp.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            {experiences.length > maxWorkToShow && (
+              <button
+                onClick={() => setShowAllWork(!showAllWork)}
+                className="mt-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm md:text-base flex items-center gap-1.5 transition-colors duration-300 pl-8 w-fit"
+              >
+                {showAllWork
+                  ? "Show Less"
+                  : `See More Work (${
+                      experiences.length - maxWorkToShow
+                    } more)`}
+                <span className="text-xs">{showAllWork ? "▲" : "▼"}</span>
+              </button>
+            )}
           </div>
         </motion.div>
       </div>
