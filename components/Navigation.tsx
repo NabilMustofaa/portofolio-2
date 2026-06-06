@@ -23,7 +23,7 @@ export default function Navigation() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || isOpen
-          ? "bg-neutral-950/25 backdrop-blur-md py-4 shadow-lg"
+          ? "md:bg-neutral-950/25 bg-neutral-950 backdrop-blur-md py-6 shadow-lg"
           : "bg-transparent py-4"
       }`}
     >
@@ -99,7 +99,7 @@ export default function Navigation() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 right-0 bg-neutral-950/25 backdrop-blur-lg border-b border-neutral-900/80 shadow-2xl overflow-hidden py-8 px-6 flex flex-col items-center gap-6 z-40"
+              className="md:hidden absolute top-full left-0 right-0 bg-neutral-950 backdrop-blur-lg border-b border-neutral-900/80 shadow-2xl overflow-hidden py-8 px-6 flex flex-col items-center gap-6 z-40"
             >
               <Link
                 href="/"
